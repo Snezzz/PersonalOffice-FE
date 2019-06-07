@@ -1,0 +1,27 @@
+.menu{
+    position: relative;
+    width: 350px;
+    height: 911px;
+    left: 2px;
+    background: rgba(79, 79, 79, 0.12);
+}
+.mainMenu button{
+    display: block;
+}
+.logout{
+    position: fixed;
+    bottom: 0;
+}
+.mainMenu button:focus-within{
+    background-color: rgba(253,192,15,0.93);
+}
+.submenu {
+    list-style-type: none;
+}
+.mainMenu button{
+    width: 90%;
+    margin: 4px 5px 6px 11px;
+}
+.submenu button{
+    margin: 2px 2px 2px 7px;
+}

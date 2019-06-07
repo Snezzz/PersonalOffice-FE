@@ -1,0 +1,90 @@
+.big_icon {
+    position: relative;
+    height: 51.5vh;
+    left: 17vw;
+    top: 0vh;
+}
+
+.big_title {
+    position: relative;
+    left: 9vw;
+    top: 7vh;
+    font-family: Josefin Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 97px;
+    line-height: 194.3%;
+    color: #FDC00F;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.statement {
+    position: relative;
+    left: 12vw;
+    top: 2vh;
+    font-family: Josefin Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 80px;
+    line-height: 80px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #272626;
+}
+
+.sign_up {
+    position: absolute;
+    right: 1vw;
+    top: 2vh;
+
+    font-family: "Josefin Sans", "Leelawadee UI";
+    font-size: 5vh;
+
+    border: none;
+    background-color: transparent;
+    color: #FDC00F !important;
+    cursor: pointer;
+    text-decoration: none;
+
+}
+
+.startPage{
+    width: 1000px;
+    height: 677px;
+
+    background: rgba(255, 247, 227, 0.77);
+}
+.log_in {
+    position: absolute;
+    right: 15vw;
+    top: 2vh;
+
+    font-family: "Josefin Sans", "Leelawadee UI";
+    font-size: 5vh;
+
+    border: none;
+    background-color: transparent;
+
+    cursor: pointer;
+    color: black !important;
+}
+
+.question {
+    position: absolute;
+
+    background: url("../../Icons/question.png");
+    background-size: cover;
+
+    border: none;
+
+    cursor: pointer;
+
+    width: 6vh;
+    height: 6vh;
+    left: 2vw;
+    top: 2vh;
+}

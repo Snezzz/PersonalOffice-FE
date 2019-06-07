@@ -1,0 +1,90 @@
+.form {
+    display: flex;
+    padding: 20px 20px 20px 20px;
+    position: relative;
+    top: 22px;
+    flex-direction: column;
+    width: 535px;
+    left: 252px;
+    bottom: 114px;
+    background: rgba(255, 247, 227, 0.4);
+    border: 6px solid #FDC00F;
+    box-sizing: border-box;
+}
+.login_page{
+    position: relative;
+    background: rgba(255,250,237,0.35);
+}
+.form img{
+    position: relative;
+    left: 42%;
+    background-size: 100% 100%;
+    width: 100px;
+}
+.form div a{
+    position: relative;
+    display: block;
+    width: 78%;
+    font-size: 15px !important;
+    line-height: 25px !important;
+    text-align: right !important;
+    color: #FDC00F !important;
+    mix-blend-mode: darken;
+}
+.form input{
+    position: relative;
+    left: 26%;
+    width: 52%;
+    background-color: rgba(253,192,15,0.06);
+    border:1px solid rgba(253,192,15,0.93);
+
+}
+.form div button, .form button{
+    background-color: rgba(255, 247, 227, 0.4);
+    width: 200px;
+    border: none;
+}
+.form b, .form div button, .form button{
+    position: relative;
+    left: 34%;
+    width: 189px;
+    height:48px;
+    font-family: 'Josefin Sans';
+    font-style: normal;
+    font-size: 35px;
+    line-height: 41px;
+    text-align: center;
+    color: black;
+}
+.page_title img{
+    width: 30px;
+}
+.page_title b:first-child{
+    font-size: xx-large;
+}
+.page_title b a{
+    float: right;
+    position: relative;
+    right: 32px;
+    color:black;
+}
+.form b{
+    font-weight:300;
+}
+.form div button, .form button{
+    font-weight: 600;
+}
+.form div button:hover, .form button:hover{
+    color:#FDC00F;
+}
+.form input:hover{
+    height: 30px;
+    width: 255px;
+}
+.form div a:hover{
+    font-size: 20px !important;
+    color: red !important;
+}
+.page_title b:last-child:hover{
+    font-size: 27px ;
+}

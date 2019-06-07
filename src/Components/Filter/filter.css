@@ -1,0 +1,50 @@
+.body{
+    left: 400px;
+    right: 7px;
+    top: 139px;
+    bottom: 38px;
+
+    background: #FBFCFC;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.selection{
+    position: relative;
+    border: 1px solid;
+}
+.action{
+    position: relative;
+    display: inherit;
+}
+.selection,.filter{
+    display: flex;
+flex-direction: row;
+}
+
+.selection p{
+    padding-right: 6px;
+    padding-left: 6px;
+
+}
+.selection select{
+    margin: 12px 12px 12px 12px;
+}
+.action button:first-child{
+    background: url("../../Icons/050218D.png");
+    width: 54px;
+    height: 48px;
+}
+.action button{
+    border: none;
+    background-size: 100% 100% !important;
+
+}
+.action button:last-child{
+    position: relative;
+    top: 3px;
+    background: url("../../Icons/ClearIcon.png");
+    width: 44px;
+    height: 40px;
+}
+.filter{
+    margin: 10px 10px 10px 10px;
+}

@@ -1,0 +1,8 @@
+.markTable{
+    margin: 14px 14px 14px 14px;
+}
+.table thead,.table tbody{
+    z-index: unset !important;
+    border: 1px solid black !important;
+
+}
