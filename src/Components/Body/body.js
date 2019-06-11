@@ -5,35 +5,31 @@ import Filter from "../Filter/filter";
 import Export from "../Export/export";
 import Table from "../Table/table";
 import FilterContainer from "../../Containers/FilterContainer/FilterContainer";
+import Tasks from "../Tasks/tasks";
 
 const URL = 'http://localhost:8080/'
+
 class Body extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
             Data: props.Data,
-            filter: props.filter
+            filter: props.filter,
+            component:props.component
         };
-
-
+        this.getData = this.getData.bind(this);
     }
-
+    getData(type){
+        this.props.getData(localStorage.getItem("User"),type);
+    }
     render() {
-        console.log(this.props.Data)
-        return (
-            <div className="body">
-                {this.props.isFees ? (
-                    <div>
-                        <Filter filter={this.state.filter}/>
-                        <Table Data={this.props.Data}/>
-                        <Export/>
-                    </div>
-                ) : (<div>{this.state.Data[0].id}</div>)
+            return (
+                <div className="body">
+                    {this.props.component(this.state.Data)}
+                </div>
+            )
 
-                }
-            </div>
-        )
     }
 }
 export default Body;

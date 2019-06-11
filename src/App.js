@@ -8,6 +8,9 @@ import UserContainer from "./Containers/UserContainer";
 import LogInContainer from "./Containers/LogInContainer"
 import SignUpContainer from "./Containers/SignUpContainer"
 import HelpContainer from "./Containers"
+import Tasks from "./Components/Tasks";
+import TasksContainer from "./Containers/TasksContainer/TasksContainer";
+
 function App() {
   return (
       <Router>

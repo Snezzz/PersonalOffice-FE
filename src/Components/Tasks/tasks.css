@@ -4,32 +4,16 @@
     left: 2px;
     background: rgba(79, 79, 79, 0.12);
 }
-.menu img{
-    position: relative;
-    left: 48px;
-    margin-top: 20px;
-}
 .mainMenu button{
     display: block;
-    background: rgba(51, 51, 51, 0.19);
-    border-radius: 5px;
-    font-family: Josefin Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 194.3%;
-    display: flex;
-    align-items: center;
-    text-align: center;
 }
 .logout{
     position: fixed;
     bottom: 0;
 }
-.mainMenu button .active{
+.mainMenu button:focus-within{
     background-color: rgba(253,192,15,0.93);
 }
-
 .submenu {
     list-style-type: none;
 }

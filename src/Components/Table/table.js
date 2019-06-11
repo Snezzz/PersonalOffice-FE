@@ -10,6 +10,7 @@ class Table extends Component{
         this.state = {
             Data: props.Data
         };
+
     }
     render(){
         return(

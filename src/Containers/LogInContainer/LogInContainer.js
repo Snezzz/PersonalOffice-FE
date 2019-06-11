@@ -26,6 +26,7 @@ get(){
             .then((response)=>{ if(response){
                     if (password === response.password){
                         localStorage.setItem("User",response.id)
+                        localStorage.setItem("type","fees");
                         User = response;
                         this.setState({
                             validation : true,
@@ -34,9 +35,7 @@ get(){
                     }
                     else alert('Wrong password!');
                 } else alert('No such user!');
-        })//.then(()=>{
-            //localStorage.setItem("User",User.login)})
-            .catch((error) => {
+        }).catch((error) => {
             console.log(error);
         })
     }
