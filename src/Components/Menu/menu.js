@@ -56,14 +56,14 @@ class Menu extends Component {
 
     render(){
         return(
-            <div className="menu" >
+            <div className="col-12 col-md-3 col-sm-3 col-lg-3 col-xl-3 menu" >
                 <img src={avatar}/>
                 <p className="user">{this.state.User.sirName} {this.state.User.firstName} {this.state.User.partonymic}</p>
 
                 <p>{this.state.User.type} {this.state.User.course} курс</p>
                 <p>{this.state.User.direction}</p>
                 <div className="mainMenu">
-                <button type="user" onClick={this.getBody}>Персональные данные</button>
+                <button  type="user" onClick={this.getBody}>Персональные данные</button>
                 <button className="fees" type="fees" onClick={this.getBody}>Электронный дневник</button>
                     <ul className="submenu">
                         <li><button data-info="exams" onClick={this.filter}>Экзамены</button></li>

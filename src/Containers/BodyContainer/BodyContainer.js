@@ -25,9 +25,20 @@ class BodyContainer extends Component {
         };
         this.getData = this.getData.bind(this);
         this.filter = this.filter.bind(this);
-
+        this.upload = this.upload.bind(this);
     }
 
+    upload(user){
+        console.log(user);
+        fetch(`${URL}user`, {
+            method: 'put',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(user)
+        }).catch((error) => {
+                console.log(error);
+        });
+
+}
     filter(course,semester,type){
         let query;
         let userID = localStorage.getItem("User");
@@ -57,7 +68,7 @@ class BodyContainer extends Component {
                     this.setState({
                         Data: response,
                         isFees: false,
-                        component: () => (<Personaldata Data={response}/>)
+                        component: () => (<Personaldata Data={response} upload={this.upload}/>)
                     });
                 });
         }
@@ -82,6 +93,7 @@ class BodyContainer extends Component {
                         });
                     }
                     else if (type === "statements") {
+
                         this.setState({
                             Data: Data,
                             isFees: false,
@@ -108,7 +120,7 @@ componentDidMount(){
 
     render() {
             return (
-                <div className="container">
+                <div className="row">
                 <Menu User={this.state.User} getData={this.getData}
                       click={this.click}
                       logOut={this.props.logOut} filter={this.filter}/>

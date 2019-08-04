@@ -1,0 +1,28 @@
+.right{
+    margin: 0 79% 14px;
+}
+.data{
+    box-shadow: none;
+    background: none;
+}
+.personal{
+    position: relative;
+    top:10px;
+    background-color: #ffd15c42;
+    margin: 2px 2px 15px 2px;
+    padding: 15px 16px 13px 14px;
+    border-radius: 5px;
+}
+@media (min-width: 320px) and (max-width: 640px) {
+    .form-group label {
+        text-align: center;
+    }
+    .right {
+        margin: 0 65% 14px;
+    }
+}
+@media (min-width: 1024px) and (max-width: 1366px) {
+    .right {
+        margin: 0 84% 14px;
+    }
+}

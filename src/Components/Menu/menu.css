@@ -3,10 +3,11 @@
     width: 350px;
     left: 2px;
     background: rgba(79, 79, 79, 0.12);
+    text-align: center;
 }
 .menu img{
     position: relative;
-    left: 48px;
+   /* left: 48px; */
     margin-top: 20px;
 }
 .mainMenu button{

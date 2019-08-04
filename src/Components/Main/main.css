@@ -8,13 +8,15 @@
 .header{
     height: 200px;
 }
+/*
 .mainPart{
     display: flex;
     flex-direction: row;
 }
-.container{
+/*.container{
     display: contents;
 }
+*/
 body{
     background: rgba(255, 247, 227, 0.67);
 }

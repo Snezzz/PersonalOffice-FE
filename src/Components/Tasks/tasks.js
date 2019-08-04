@@ -25,13 +25,16 @@ class Tasks extends Component {
                 </tr>
                </thead>
                <tbody>
-               {this.props.Data.map( (key) =>
+               {
+                   this.props.Data.map( (key) =>
+
                    <tr>
-                       <td>{key.task}</td>
-                       <td>{key.date}</td>
-                       <td>{key.deadline}</td>
-                       <td>5</td>
+                       <td key="task">{key.task}</td>
+                       <td key="date">{key.date.substring(0,10)}</td>
+                       <td key="deadline">{key.deadline.substring(0,10)}</td>
+                       <td key="2">5</td>
                    </tr>
+
                )}
                </tbody>
            </table>

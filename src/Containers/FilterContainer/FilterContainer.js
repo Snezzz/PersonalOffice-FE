@@ -3,6 +3,7 @@ import Main from '../../Components/Main'
 import Filter from "../../Components/Filter/filter";
 import Body from "./../../Components/Body/body";
 import Menu from '../../Components/Menu/menu';
+import BodyContainer from "../BodyContainer/BodyContainer";
 const URL = 'http://localhost:8080/'
 
 
@@ -41,8 +42,7 @@ class FilterContainer extends Component {
             <div className="contant">
             <Menu User={this.state.User} getData={this.props.getData}
                   logOut={this.props.logOut} filter={this.filter}/>
-            <Body User={this.state.User} isFees={this.state.isFees}
-                  filter={this.filter} Data={this.state.Data}/>
+            <BodyContainer isFees={this.state.isFees} Data={this.state.Data}/>
             </div>
         )
     }

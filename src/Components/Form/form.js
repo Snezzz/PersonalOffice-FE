@@ -30,6 +30,8 @@ class Form extends Component {
         if (!this.state.User.length > 0) {
             let type = "/"+this.state.type;
             return (
+                <div className="container">
+                    <div className="row">
                 <div className="login_page">
                     <div className="page_title">
                         <b>PA</b>
@@ -50,6 +52,8 @@ class Form extends Component {
                             ):
                             ( <button onClick={this.signup}> Sign Up</button>)}
                     </div>
+                </div>
+                </div>
                 </div>
             )
         }

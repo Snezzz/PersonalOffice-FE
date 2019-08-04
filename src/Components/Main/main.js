@@ -27,12 +27,10 @@ class Main extends Component{
         })
     }
     render(){
-        console.log(this.state.type)
             return (
-                <div className="s">
+                <div className="container">
                     <div className="header"></div>
-                    <div className="mainPart">
-
+                    <div className="col-sm-12 mainPart">
                         <BodyContainer User={this.state.User} isFees={this.state.isFees} Data={this.state.Data}
                                        type={this.state.type} logOut={this.props.logOut}/>
                     </div>

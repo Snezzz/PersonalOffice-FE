@@ -46,7 +46,8 @@ class Filter extends Component{
     render(){
         return(
             <div className="filter">
-                <div className="selection">
+                <div className="col-sm-8 selection">
+                    <div>
                     <p>Курс:</p>
                     <select id="course">
                         <option value="all">все курсы</option>
@@ -57,21 +58,25 @@ class Filter extends Component{
                         <option value='5'>5</option>
                         <option value='6'>6</option>
                     </select>
+                    </div>
+                    <div>
                     <p>Семестр:</p>
                     <select id="semester">
                         <option value='all'>оба семестра</option>
                         <option value='1'>1</option>
                         <option value='2'>2</option>
                     </select>
+                    </div>
+                    <div>
                     <p>Режим:</p>
                     <select id="type">
                         <option value='all'>все</option>
                         <option value='tests'>зачеты</option>
                         <option value='exams'>экзамены</option>
                     </select>
-
+                    </div>
                 </div>
-                <div className="action">
+                <div className="col-sm-3 action">
                     <button className="cancel" onClick={this.filter}></button>
                     <button className="get" onClick={this.filter}></button>
                 </div>
