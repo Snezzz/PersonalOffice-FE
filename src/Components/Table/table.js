@@ -14,9 +14,9 @@ class Table extends Component{
     }
     render(){
         return(
-        <div className="markTable">
-            {(this.props.Data.length > 0) ? (<table className="table">
-                    <thead>
+        <div className="markTable table-responsive-sm">
+            {(this.props.Data.length > 0) ? (<table className="table table-bordered">
+                    <thead className="table-dark">
                     <tr>
                         <td>Дисциплина</td>
                         <td>Преподаватель</td>

@@ -1,6 +1,4 @@
 import React, { Component }  from 'react';
-import Main from '../../Components/Main'
-import Filter from "../../Components/Filter/filter";
 import Body from "./../../Components/Body/body";
 import Menu from '../../Components/Menu/menu';
 import Schedule from '../../Components/Schedule/Schedule';
@@ -9,14 +7,14 @@ import Personaldata from "../../Components/PersonalData/personaldata";
 import Statements from "../../Components/Statements/statements";
 import $ from'jquery';
 
-const URL = 'http://localhost:8080/'
+const URL = 'http://localhost:8080/';
 
 
 class BodyContainer extends Component {
 
     constructor(props){
         super(props);
-        this.state= {
+        this.state = {
             User: props.User,
             isFees:props.isFees,
             type:props.type,
@@ -26,10 +24,18 @@ class BodyContainer extends Component {
         this.getData = this.getData.bind(this);
         this.filter = this.filter.bind(this);
         this.upload = this.upload.bind(this);
+        this.send = this.send.bind(this);
+        this.delete = this.delete.bind(this);
     }
 
     upload(user){
-        console.log(user);
+        $.removeCookie("User");
+        $.cookie("User",JSON.stringify(user));
+       //console.log(JSON.parse($.cookie("User")));
+   //     this.setState({
+     //       User:user
+       //     });
+        this.props.update(user);
         fetch(`${URL}user`, {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
@@ -39,14 +45,36 @@ class BodyContainer extends Component {
         });
 
 }
+delete(type,number){
+    fetch(`${URL}${type}`, {
+        method: 'delete',
+        body: number
+    }).then( ()=>{
+        this.getData(this.state.User.id,type+"s")
+    }).catch((error) => {
+        console.log(error);
+        });
+}
+//обновление
+send(data,type){
+    fetch(`${URL}${type}`, {
+        method: 'post',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
+    }).then( ()=>{
+        this.getData(this.state.User.id,type+"s")
+    }).catch((error) => {
+        console.log(error);
+    })
+}
     filter(course,semester,type){
         let query;
-        let userID = localStorage.getItem("User");
+        //let userID = localStorage.getItem("User");
+        let userID = JSON.parse($.cookie("User")).id;
         query = "id="+userID+"&course="+course+"&semester="+semester+"&type="+type;
         fetch(`${URL}fees/filter?${query}`)
             .then((response) => response.json())
             .then((response) => {
-                console.log(response)
                 this.setState({
                     Data: response,
                     component:() =>(<Schedule Data={response} filter={this.filter}/>)
@@ -58,9 +86,10 @@ class BodyContainer extends Component {
     getData(user_id,type){
 
         localStorage.setItem("type",type);
-        var Data = [];
+        let Data = [];
         let query;
-        if(type=="user"){
+
+        if(type==="user"){
             fetch(`${URL}id/${user_id}`)
                 .then((response) => response.json())
                 .then((response) => {
@@ -77,8 +106,9 @@ class BodyContainer extends Component {
             fetch(`${URL}` + query)
                 .then((response) => response.json())
                 .then((response) => {
+
                     for (let i of response) {
-                        if (i.student_id == user_id) {
+                        if (i.student_id === user_id) {
                             Data.push(i);
                         }
                         else {
@@ -93,11 +123,11 @@ class BodyContainer extends Component {
                         });
                     }
                     else if (type === "statements") {
-
+                        console.log(Data);
                         this.setState({
                             Data: Data,
                             isFees: false,
-                            component: () => (<Statements Data={Data}/>)
+                            component: () => (<Statements Data={Data} send={this.send}  delete={this.delete}/>)
                         });
 
                     }
@@ -106,7 +136,7 @@ class BodyContainer extends Component {
                             Data: Data,
                             isFees: false,
                             isFilter: false,
-                            component: () => (<Tasks Data={Data}/>)
+                            component: () => (<Tasks Data={Data} send={this.send} delete={this.delete}/>)
                         });
                     }
                 })

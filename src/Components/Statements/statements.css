@@ -1,0 +1,17 @@
+.add, .cancel{
+    border: none;
+    background-size: 100% 100% !important;
+}
+.cancel{
+    background: url("../../Icons/050218D.png");
+    width: 34px;
+    height: 28px;
+}
+.add{
+    background: url("../../Icons/plus.png");
+    width: 44px;
+    height: 40px;
+}
+thead tr, thead tr td,tbody tr, tbody tr td{
+    border: 1px solid black;
+}

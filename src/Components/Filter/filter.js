@@ -13,22 +13,22 @@ class Filter extends Component{
     filter(e){
        let className =  $(e.target).attr("class");
         let course,semester,type;
-        console.log(className)
-        if(className=="get") {
+        if(className === "get") {
            course = $("#course").val();
            semester = $("#semester").val();
            type = $("#type").val();
-            if (course == "all")
+            if (course === "all")
                 course = -1;
-            if (semester == "all")
+            if (semester === "all")
                 semester = -1;
             switch (type) {
                 case "exams":
                     type = "экзамен";
                     break;
                 case "tests":
-                    type = "зачет"
+                    type = "зачет";
                     break;
+                default:break;
             }
             this.props.filter(course,semester,type);
         }
@@ -45,9 +45,10 @@ class Filter extends Component{
     }
     render(){
         return(
-            <div className="filter">
-                <div className="col-sm-8 selection">
-                    <div>
+            <div className="filter col-sm-12">
+                <div className="col-12 col-md-12 col-sm-12 col-lg-8 col-xl-8 selection">
+                    <div className="row">
+                    <div className="col-12 col-md-4 col-sm-12 col-lg-4 col-xl-4 ">
                     <p>Курс:</p>
                     <select id="course">
                         <option value="all">все курсы</option>
@@ -59,7 +60,7 @@ class Filter extends Component{
                         <option value='6'>6</option>
                     </select>
                     </div>
-                    <div>
+                    <div  className="col-12 col-md-4 col-sm-12 col-lg-4 col-xl-4 ">
                     <p>Семестр:</p>
                     <select id="semester">
                         <option value='all'>оба семестра</option>
@@ -67,7 +68,7 @@ class Filter extends Component{
                         <option value='2'>2</option>
                     </select>
                     </div>
-                    <div>
+                    <div  className="col-12 col-md-4 col-sm-12 col-lg-4 col-xl-4 ">
                     <p>Режим:</p>
                     <select id="type">
                         <option value='all'>все</option>
@@ -76,9 +77,10 @@ class Filter extends Component{
                     </select>
                     </div>
                 </div>
-                <div className="col-sm-3 action">
-                    <button className="cancel" onClick={this.filter}></button>
-                    <button className="get" onClick={this.filter}></button>
+                </div>
+                <div className="col-3 col-md-3 col-sm-4 col-lg-3 col-xl-3 action">
+                    <button className="cancel" onClick={this.filter}/>
+                    <button className="get" onClick={this.filter}/>
                 </div>
             </div>
         )

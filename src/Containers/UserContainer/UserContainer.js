@@ -1,6 +1,7 @@
 import React, { Component }  from 'react';
 import Main from '../../Components/Main'
 import LogInContainer from "../LogInContainer";
+import $ from 'jquery'
 
 const URL = 'http://localhost:8080/'
 
@@ -42,17 +43,18 @@ class UserContainer extends Component {
 
     logOut(){
         localStorage.clear();
+        $.removeCookie('User', { path: '/' });
         window.location.assign("/login")
     }
     componentWillMount(){
-        this.logIn(localStorage.getItem("User")); //заходим
+ //       this.logIn(localStorage.getItem("User")); //заходим
     }
 
     render() {
 
-            if (this.state.User.login !== undefined) {
+        //    if (this.state.User.login !== undefined) {
                 return (
-                    <Main User={this.state.User}
+                    <Main User={JSON.parse($.cookie("User"))}
                           Data={{}}
                           isFees={this.state.isFees}
                           isFilter={this.state.isFilter}
@@ -60,13 +62,13 @@ class UserContainer extends Component {
                     />
 
                 )
-            }
+           // }
 
-    else{
-            return (
-               <h1>Waiting please...</h1>
-            )
-        }
+  //  else{
+    //        return (
+      //         <h1>Waiting please...</h1>
+        //    )
+        //}
 
 }
 }

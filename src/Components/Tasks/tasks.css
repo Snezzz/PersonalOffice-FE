@@ -24,3 +24,13 @@
 .submenu button{
     margin: 2px 2px 2px 7px;
 }
+.cancel{
+    background: url("../../Icons/050218D.png");
+    width: 34px;
+    height: 28px;
+}
+.add{
+    background: url("../../Icons/plus.png");
+    width: 44px;
+    height: 40px;
+}

@@ -1,17 +1,11 @@
 import React, { Component } from 'react';
-
-import Menu from '../Menu';
-import Header from '../Header';
-import Body from '../Body';
 import './main.css';
-import FilterContainer from "../../Containers/FilterContainer/FilterContainer";
 import BodyContainer from "../../Containers/BodyContainer/BodyContainer";
 
 class Main extends Component{
 
     constructor(props) {
         super(props);
-        console.log(localStorage.getItem("type"))
         this.state = {
             User: props.User,
             Data: props.Data,
@@ -19,6 +13,7 @@ class Main extends Component{
             type: localStorage.getItem("type")
         };
         this.click = this.click.bind(this);
+        this.update = this.update.bind(this);
     }
 
     click(type){
@@ -26,13 +21,18 @@ class Main extends Component{
             type: type
         })
     }
+    update(user){
+        this.setState({
+            User:user
+        });
+    }
     render(){
             return (
-                <div className="container">
-                    <div className="header"></div>
+                <div className="container-flex">
+                    <div className="header"/>
                     <div className="col-sm-12 mainPart">
                         <BodyContainer User={this.state.User} isFees={this.state.isFees} Data={this.state.Data}
-                                       type={this.state.type} logOut={this.props.logOut}/>
+                                       type={this.state.type} logOut={this.props.logOut} update={this.update}/>
                     </div>
                 </div>
 

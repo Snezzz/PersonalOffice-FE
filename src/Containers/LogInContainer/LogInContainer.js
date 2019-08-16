@@ -1,6 +1,7 @@
 import React, { Component }  from 'react';
-import Form from '../../Components/Form';
+import Form from '../../Components/Form/form';
 import UserContainer from "../UserContainer/UserContainer";
+import $ from 'jquery';
 
 let User={};
 class LogInContainer extends Component {
@@ -25,12 +26,15 @@ get(){
         }).then((response) => response.json())
             .then((response)=>{ if(response){
                     if (password === response.password){
+                        let date = new Date();
+                        let minutes = 30; // 30 minutes
+                        date.setTime(date.getTime() + (minutes * 60 * 1000));
+                        $.cookie("User",JSON.stringify(response),{expires:date});
                         localStorage.setItem("User",response.id)
                         localStorage.setItem("type","fees");
                         User = response;
                         this.setState({
-                            validation : true,
-                            User:response
+                            validation : true
                         })
                     }
                     else alert('Wrong password!');
@@ -40,13 +44,14 @@ get(){
         })
     }
     render(){
-        if(!this.state.validation===true) {
+
+        if(($.cookie("User")==='null')||(!$.cookie("User"))) {
             return (
                 <Form log={this.login} type="signup" get={this.get}/>
             )
         }
         else{
-            window.location.assign('/cabinet');
+          window.location.assign('/cabinet');
         }
 
     }

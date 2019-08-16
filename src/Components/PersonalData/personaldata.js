@@ -11,6 +11,9 @@ class Personaldata extends Component {
 
     constructor(props){
         super(props);
+        this.state = {
+            checked : true
+        };
         this.upload = this.upload.bind(this);
         this.checkPassword = this.checkPassword.bind(this);
         this.check = this.check.bind(this);
@@ -47,7 +50,7 @@ class Personaldata extends Component {
                 break;
             case "snils":
                 reg = new RegExp("[a-z]|[A-Z]")
-                if((value.length!=11)||(value.match(reg))) {
+                if((value.length!=12)||(value.match(reg))) {
                     checked = false;
                 }
                 else checked = true;
@@ -57,11 +60,20 @@ class Personaldata extends Component {
         if(value.length===0)checked = true;
         if(!checked){
             $(e.target).css("borderColor", "red");
-            $(e.target).removeAttr("checked")
+            $(e.target).removeAttr("checked");
+            $(e.target).popover('show')
+            $(e.target).focus();
+            this.setState({
+                checked: false
+            })
         }
         else{
             $(e.target).css("borderColor", "green");
-            $(e.target).attr("checked")
+            $(e.target).popover('hide');
+            $(e.target).attr("checked",true)
+            this.setState({
+                checked: true
+            })
         }
     }
     checkPassword(e){
@@ -102,20 +114,36 @@ class Personaldata extends Component {
         }
     }
     upload(e){
-
-
         let type = $(e.target).text();
         let elem;
         let Data = this.props.Data;
         switch (type){
             case "Сохранить":
+                let check = true;
                 elem = $(".personal")[0];
                 Data.firstName = $("#firstname").val();
                 Data.sirName = $("#sirname").val();
                 Data.partonymic = $("#partonymic").val();
                 Data.number = $("#number").val();
                 Data.snils =  $("#snils").val();
-                this.props.upload(Data);
+                if(this.state.checked){
+                    this.props.upload(Data);
+                }
+                else
+                    alert("Проверьте правильность введенных данных")
+               /* let input = $("input").get();
+                input.forEach((elem) => {
+                    if(!elem.getAttribute("checked")){
+                        check = false;
+                    }
+                });
+                console.log(check)
+                if(check)
+                    this.props.upload(Data);
+                else
+                    alert("Проверьте правильность введенных данных")
+                    */
+
                 break;
             case "Обновить":
                 let inputs = $("input[type=password]");
@@ -132,6 +160,7 @@ class Personaldata extends Component {
                     Data.password = new_password;
                     this.props.upload(Data);
                     $('button[data-toggle="popover"]').popover('hide')
+                    alert("Пароль успешно обновлен")
                 }
 
                 else{
@@ -161,21 +190,34 @@ class Personaldata extends Component {
                             <label htmlFor="firstname" className="col-sm-3 col-form-label">Имя</label>
                             <div className="col-12 col-md-7 col-sm-8 col-lg-8 col-xl-8">
                                 <input type="text" datatype="fullname" className="form-control" id="firstname"
-                                       placeholder="" defaultValue={this.props.Data.firstName} onBlur={this.check} />
+                                       placeholder="" defaultValue={this.props.Data.firstName}
+                                       onBlur={this.check}
+                                       data-container="body"
+                                       data-toggle="popover" data-placement="right"
+                                       data-content="Проверьте правильность"
+                                       checked />
                             </div>
                         </div>
                         <div className="form-group row">
                             <label htmlFor="sirname" className="col-sm-3 col-form-label">Фамилия</label>
                             <div className="col-12 col-md-7 col-sm-8 col-lg-8 col-xl-8">
                                 <input type="text" datatype="fullname" className="form-control" id="sirname"
-                                       placeholder="" defaultValue={this.props.Data.sirName} onBlur={this.check}/>
+                                       placeholder="" defaultValue={this.props.Data.sirName} onBlur={this.check}
+                                       data-container="body"
+                                       data-toggle="popover" data-placement="left"
+                                       data-content="Проверьте правильность"
+                                       checked/>
                             </div>
                         </div>
                         <div className="form-group row">
                             <label htmlFor="partonymic" className="col-sm-3 col-form-label">Отчество</label>
                             <div className="col-12 col-md-7 col-sm-8 col-lg-8 col-xl-8">
                                 <input type="text" datatype="fullname" className="form-control" id="partonymic"
-                                       placeholder="" defaultValue={this.props.Data.partonymic} onBlur={this.check}/>
+                                       placeholder="" defaultValue={this.props.Data.partonymic} onBlur={this.check}
+                                       data-container="body"
+                                       data-toggle="popover" data-placement="left"
+                                       data-content="Проверьте правильность"
+                                       checked/>
                             </div>
                         </div>
 
@@ -183,14 +225,14 @@ class Personaldata extends Component {
                             <label htmlFor="staticType" className="col-3 col-md-3 col-sm-3 col-lg-3 col-xl-3 col-form-label">Уровень</label>
                             <div className="col-8 col-md-8 col-sm-8 col-lg-8 col-xl-8">
                                 <input type="text" readOnly className="form-control-plaintext" id="staticType"
-                                       defaultValue={this.props.Data.type} />
+                                       defaultValue={this.props.Data.type} checked />
                             </div>
                         </div>
                         <div className="form-group row">
                             <label htmlFor="staticCourse" className="col-3 col-md-3 col-sm-3 col-lg-3 col-xl-3  col-form-label">Курс</label>
                             <div className="col-8 col-md-8 col-sm-8 col-lg-8 col-xl-8">
                                 <input type="text" readOnly className="form-control-plaintext" id="staticCourse"
-                                       defaultValue={this.props.Data.course} />
+                                       defaultValue={this.props.Data.course} checked/>
                             </div>
                         </div>
 
@@ -198,7 +240,7 @@ class Personaldata extends Component {
                             <label htmlFor="staticDirection" className="col-5 col-md-3 col-sm-3 col-lg-3 col-xl-3   col-form-label">Направление</label>
                             <div className="col-7 col-md-8 col-sm-8 col-lg-8 col-xl-8">
                                 <input type="text" readOnly className="form-control-plaintext" id="staticDirection"
-                                       defaultValue={this.props.Data.direction} />
+                                       defaultValue={this.props.Data.direction} checked/>
                             </div>
                         </div>
 
@@ -206,7 +248,12 @@ class Personaldata extends Component {
                             <label htmlFor="number" className="col-sm-3 col-form-label">Phone</label>
                             <div className="col-sm-8">
                                 <input type="text" datatype="number" className="form-control" id="number"
-                                       placeholder="+7**********"  defaultValue={this.props.Data.number}  onBlur={this.check}/>
+                                       placeholder="+7**********"  defaultValue={this.props.Data.number}
+                                       data-container="body"
+                                       data-toggle="popover" data-placement="left"
+                                       data-content="Проверьте правильность"
+                                       maxlength="12"
+                                       onBlur={this.check}/>
                             </div>
                         </div>
 
@@ -215,6 +262,9 @@ class Personaldata extends Component {
                             <div className="col-sm-8">
                                 <input type="text" datatype="snils" className="form-control" id="snils"
                                        placeholder="без '-'"  defaultValue={this.props.Data.snils}  onBlur={this.check}
+                                       data-container="body"
+                                       data-toggle="popover" data-placement="left"
+                                       data-content="Проверьте правильность"
                                        onChange={this.get}/>
                             </div>
                         </div>

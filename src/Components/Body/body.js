@@ -25,6 +25,7 @@ class Body extends Component {
         this.props.getData(localStorage.getItem("User"),type);
     }
     render() {
+
             return (
                 <div className="col-12 col-md-9 col-sm-9 col-lg-9 col-xl-9 body">
                     {this.props.component(this.state.Data)}

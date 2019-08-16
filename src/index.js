@@ -1,5 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/js/dist/popover.js'
+import 'jquery.cookie/jquery.cookie'
 import 'bootstrap/dist/js/bootstrap.bundle.min'
 import React from 'react';
 import ReactDOM from 'react-dom';
