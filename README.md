@@ -7,9 +7,9 @@ He has an opportunity to change personal information (it will be updated at once
 It is available to add a new student.  
 
 ## Frameworks and libraries  
-React - allows to update code dynamically without rebuilding
-JQuery - helps to get DOC-elements easier
-Bootstrap - the best page's style variant with responsiveness for different devices
+React - allows to update code dynamically without rebuilding  
+JQuery - helps to get DOC-elements easier  
+Bootstrap - the best page's style variant with responsiveness for different devices  
 
 
 ## Available Scripts
