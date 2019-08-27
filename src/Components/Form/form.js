@@ -22,11 +22,15 @@ class Form extends Component {
     log(e){
         let logIn = e.target.parentNode.parentElement.childNodes[2].value;
         let password = e.target.parentNode.parentElement.childNodes[4].value;
-        this.props.log(logIn,password);
-
+        if((logIn)&&(password))
+            this.props.log(logIn, password);
+        else
+            alert("Введите логин и пароль!")
     }
     signup(){
-        this.props.signup();
+        let login = $("#login").val();
+        let password = $("#password").val();
+        this.props.signup(login,password);
     }
     add(e){
         let text = "Я,"+$(".user").html()+", прошу предоставить мне ...";
@@ -78,9 +82,9 @@ class Form extends Component {
                                     <div className="form">
                                         <img alt="" src={avatar}/>
                                         <b>Login:</b>
-                                        <input type="text" placeholder="st010203"/>
+                                        <input id="login" type="text" placeholder="st010203"/>
                                         <b>Password:</b>
-                                        <input type="password" placeholder="****"/>
+                                        <input id="password" type="password" placeholder="****"/>
                                         {this.state.type==="signup"? (
                                                 <div>
                                                     <a href="">Forgot your password?</a>
@@ -99,7 +103,7 @@ class Form extends Component {
         else {
             return (
                 <UserContainer User={this.state.User}/>
-            )
+            );
         }
     }
 

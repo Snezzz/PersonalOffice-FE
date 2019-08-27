@@ -187,7 +187,7 @@ class Personaldata extends Component {
                 <div className="data">
                     <form className="personal">
                         <div className="form-group row">
-                            <label htmlFor="firstname" className="col-sm-3 col-form-label">Имя</label>
+                            <label htmlFor="firstname" className="col-sm-3 col-form-label">Имя*</label>
                             <div className="col-12 col-md-7 col-sm-8 col-lg-8 col-xl-8">
                                 <input type="text" datatype="fullname" className="form-control" id="firstname"
                                        placeholder="" defaultValue={this.props.Data.firstName}
@@ -199,7 +199,7 @@ class Personaldata extends Component {
                             </div>
                         </div>
                         <div className="form-group row">
-                            <label htmlFor="sirname" className="col-sm-3 col-form-label">Фамилия</label>
+                            <label htmlFor="sirname" className="col-sm-3 col-form-label">Фамилия*</label>
                             <div className="col-12 col-md-7 col-sm-8 col-lg-8 col-xl-8">
                                 <input type="text" datatype="fullname" className="form-control" id="sirname"
                                        placeholder="" defaultValue={this.props.Data.sirName} onBlur={this.check}
@@ -210,7 +210,7 @@ class Personaldata extends Component {
                             </div>
                         </div>
                         <div className="form-group row">
-                            <label htmlFor="partonymic" className="col-sm-3 col-form-label">Отчество</label>
+                            <label htmlFor="partonymic" className="col-sm-3 col-form-label">Отчество*</label>
                             <div className="col-12 col-md-7 col-sm-8 col-lg-8 col-xl-8">
                                 <input type="text" datatype="fullname" className="form-control" id="partonymic"
                                        placeholder="" defaultValue={this.props.Data.partonymic} onBlur={this.check}
@@ -222,7 +222,9 @@ class Personaldata extends Component {
                         </div>
 
                         <div className="form-group row">
-                            <label htmlFor="staticType" className="col-3 col-md-3 col-sm-3 col-lg-3 col-xl-3 col-form-label">Уровень</label>
+                            <label htmlFor="staticType"
+                                   className="col-3 col-md-3 col-sm-3 col-lg-3 col-xl-3
+                                    col-form-label">Уровень</label>
                             <div className="col-8 col-md-8 col-sm-8 col-lg-8 col-xl-8">
                                 <input type="text" readOnly className="form-control-plaintext" id="staticType"
                                        defaultValue={this.props.Data.type} checked />

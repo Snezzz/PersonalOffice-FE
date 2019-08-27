@@ -23,25 +23,27 @@ get(){
         fetch(`http://localhost:8080/login/${login}`, {
             method: 'get',
             headers: {'Content-Type': 'application/json'}
-        }).then((response) => response.json())
-            .then((response)=>{ if(response){
-                    if (password === response.password){
+        }).then((response) => response.json().catch((error)=>console.log(error)))
+            .then((responseJson) => {
+                if (responseJson)
+                {
+                    if (password === responseJson.password) {
                         let date = new Date();
                         let minutes = 30; // 30 minutes
                         date.setTime(date.getTime() + (minutes * 60 * 1000));
-                        $.cookie("User",JSON.stringify(response),{expires:date});
-                        localStorage.setItem("User",response.id)
-                        localStorage.setItem("type","fees");
-                        User = response;
+                        $.cookie("User", JSON.stringify(responseJson), {expires: date});
+                        localStorage.setItem("User", responseJson.id)
+                        localStorage.setItem("type", "fees");
+                        User = responseJson;
                         this.setState({
-                            validation : true
+                            validation: true
                         })
                     }
                     else alert('Wrong password!');
-                } else alert('No such user!');
-        }).catch((error) => {
-            console.log(error);
-        })
+                }
+                else alert("Нет такого пользователя")
+            })
+
     }
     render(){
 
