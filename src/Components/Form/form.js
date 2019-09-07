@@ -72,28 +72,49 @@ class Form extends Component {
                                     <button className="btn btn-outline-primary" onClick={this.send}>Добавить</button>
                                 </form>
                             </div>):(
-                            <div className="row">
+                                <div>
+                            <div className="header">
                                 <div className="login_page">
-                                    <div className="page_title">
-                                        <b>PA</b>
-                                        <img src={key} alt="here" />
+                                    <div className="page_title row">
+                                        <div className="col-4 col-sm-8">
+                                            <Link to={{pathname: '/start'}}
+                                                  style={{ textDecoration: 'none', color:"red"}}>
+                                                <b>PA</b>
+                                                <img src={key} alt="here" />
+                                            </Link>
+                                        </div>
+                                        <div className="col-8 col-sm-4">
                                         <b><Link to={type} >Wanted to {this.state.type}?</Link></b>
-                                    </div>
-                                    <div className="form">
-                                        <img alt="" src={avatar}/>
-                                        <b>Login:</b>
-                                        <input id="login" type="text" placeholder="st010203"/>
-                                        <b>Password:</b>
-                                        <input id="password" type="password" placeholder="****"/>
+                                        </div>
+                                        </div>
+                                </div>
+                            </div>
+                            <div className="form row">
+                                    <nav className="col-sm-12 justify-content-center">
+                                        <img alt="" src={avatar} />
+                                    </nav>
+                                    <nav className="col-sm-12">
+                                        <div className="row str">
+                                            <b className="col-12 col-lg-3 col-md-3 col-sm-3 col-xl-3">Login:</b>
+                                            <input className="col-8 col-lg-5 col-md-5 col-sm-5 col-xl-5" id="login" type="text" placeholder="st010203"/>
+                                        </div>
+                                        <div className="row str">
+                                            <b className="col-12 col-lg-3 col-md-3 col-sm-3 col-xl-3">Password:</b>
+                                            <input className="col-8 col-lg-5 col-md-5 col-sm-5 col-xl-5" id="password" type="password" placeholder="****"/>
+                                        </div>
+                                        <div className="col-12 col-lg-12">
                                         {this.state.type==="signup"? (
                                                 <div>
                                                     <a href="">Forgot your password?</a>
                                                     <button onClick={this.log}> Log In</button>
                                                 </div>
                                             ):
-                                            ( <button onClick={this.signup}> Sign Up</button>)}
+                                            ( <button onClick={this.signup}>
+                                                Sign Up
+                                            </button>)}
+                                        </div>
+                                    </nav>
                                     </div>
-                                </div>
                             </div>
                         )}
 
@@ -102,7 +123,7 @@ class Form extends Component {
         }
         else {
             return (
-                <UserContainer User={this.state.User}/>
+                    <UserContainer User={this.state.User}/>
             );
         }
     }

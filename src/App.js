@@ -10,6 +10,7 @@ import SignUpContainer from "./Containers/SignUpContainer"
 import HelpContainer from "./Containers"
 import Tasks from "./Components/Tasks";
 import TasksContainer from "./Containers/TasksContainer/TasksContainer";
+import Registration from "./Components/Registration/registration";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
               <Route path="/signup" component={SignUpContainer}/>
               <Route path="/start" component={StartPage}/>
               <Route path="/cabinet" component={UserContainer}/>
+              <Route path="/registration" component={Registration}/>
           </Switch>
       </Router>
   );

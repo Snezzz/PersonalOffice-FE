@@ -46,13 +46,9 @@ class UserContainer extends Component {
         $.removeCookie('User', { path: '/' });
         window.location.assign("/login")
     }
-    componentWillMount(){
- //       this.logIn(localStorage.getItem("User")); //заходим
-    }
+
 
     render() {
-
-        //    if (this.state.User.login !== undefined) {
                 return (
                     <Main User={JSON.parse($.cookie("User"))}
                           Data={{}}
@@ -62,14 +58,6 @@ class UserContainer extends Component {
                     />
 
                 )
-           // }
-
-  //  else{
-    //        return (
-      //         <h1>Waiting please...</h1>
-        //    )
-        //}
-
 }
 }
 export default UserContainer;

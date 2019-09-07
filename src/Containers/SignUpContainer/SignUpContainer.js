@@ -53,6 +53,7 @@ class SignUpContainer extends Component {
     }
     render(){
         if(!this.state.newUser){
+
         return(
             <Form signup={this.signup} type="login"/>
         )}

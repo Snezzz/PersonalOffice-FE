@@ -131,19 +131,6 @@ class Personaldata extends Component {
                 }
                 else
                     alert("Проверьте правильность введенных данных")
-               /* let input = $("input").get();
-                input.forEach((elem) => {
-                    if(!elem.getAttribute("checked")){
-                        check = false;
-                    }
-                });
-                console.log(check)
-                if(check)
-                    this.props.upload(Data);
-                else
-                    alert("Проверьте правильность введенных данных")
-                    */
-
                 break;
             case "Обновить":
                 let inputs = $("input[type=password]");
