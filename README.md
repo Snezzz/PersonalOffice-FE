@@ -26,7 +26,7 @@ You will also see any lint errors in the console.
 
 http://localhost:3000/start - the default page of Personal Cabinet  
 http://localhost:3000/login - page for sign in cabinet  
-http://localhost:3000/sigup - page for registration  
+http://localhost:3000/signup - page for registration  
 http://localhost:3000/cabinet - main dynamic page of user's cabinet  
 
 ### `npm test`  
