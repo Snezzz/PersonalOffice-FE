@@ -1,16 +1,21 @@
 .big_icon {
     position: relative;
 }
-.statement b{
-
-    margin: 0 200px 0 auto;
+.header{
+    height: 100% !important;
 }
+@media (min-width: 768px){
+    .statement {
+        text-align: right !important;
+    }
+}
+
 .title {
     margin-top: 20px;
     font-family: Josefin Sans;
     font-style: normal;
     font-weight: normal;
-    font-size: 97px;
+    font-size: 5em;
     color: #FDC00F;
     text-align: center;
 }
@@ -19,44 +24,41 @@
     margin:  0 0 0 auto;
 }
 .statement {
-    position: relative;
-    left: 12vw;
-    top: 2vh;
-    font-family: Josefin Sans;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 60px;
-    line-height: 80px;
-    display: flex;
-    align-items: center;
     text-align: center;
-
     color: #272626;
+    font-size: 3em;
 }
 
 .sign_up {
     color: #FDC00F !important;
 
 }
-
+.header .col-12{
+    text-align: center;
+}
 .startPage{
     background: rgba(255, 247, 227, 0.77);
 }
 .log_in, .sign_up {
     font-family: "Josefin Sans", "Leelawadee UI";
-    font-size: 50px;
+    font-size: 3em;
     border: none;
     background-color: transparent;
 }
 .log_in{
     color: black !important;
 }
-.question {
+.question, .logotype {
     background-size: cover;
     margin: 12px 12px 12px 12px;
     border: none;
     cursor: pointer;
-    height: 100%;
-    width: 100%;
-
+}
+.question{
+    max-height: 100px;
+    max-width: 100px;
+}
+.logotype{
+    max-height: 315px;
+    max-width: 217px;
 }

@@ -15,10 +15,9 @@ class SignUpContainer extends Component {
         this.signup = this.signup.bind(this);
         this.add = this.add.bind(this);
     }
-   signup(login, password){
+   signup(login){
         let Data = {
-            login: login,
-            password: password
+            login: login
         };
         this.setState({
             newUser: true,

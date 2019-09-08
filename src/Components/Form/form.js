@@ -29,8 +29,7 @@ class Form extends Component {
     }
     signup(){
         let login = $("#login").val();
-        let password = $("#password").val();
-        this.props.signup(login,password);
+        this.props.signup(login);
     }
     add(e){
         let text = "Я,"+$(".user").html()+", прошу предоставить мне ...";
@@ -89,29 +88,35 @@ class Form extends Component {
                                         </div>
                                 </div>
                             </div>
-                            <div className="form row">
+                            <div className="form col-12 col-sm-12 col-md-9 col-lg-7 col-xl-6 row">
                                     <nav className="col-sm-12 justify-content-center">
                                         <img alt="" src={avatar} />
                                     </nav>
-                                    <nav className="col-sm-12">
+                                    <nav className="col-sm-12 ">
                                         <div className="row str">
                                             <b className="col-12 col-lg-3 col-md-3 col-sm-3 col-xl-3">Login:</b>
                                             <input className="col-8 col-lg-5 col-md-5 col-sm-5 col-xl-5" id="login" type="text" placeholder="st010203"/>
                                         </div>
-                                        <div className="row str">
+                                        {this.state.type!=="login"?(
+                                            <div className="row str">
                                             <b className="col-12 col-lg-3 col-md-3 col-sm-3 col-xl-3">Password:</b>
                                             <input className="col-8 col-lg-5 col-md-5 col-sm-5 col-xl-5" id="password" type="password" placeholder="****"/>
-                                        </div>
+                                        </div>):(undefined)
+                                        }
+
                                         <div className="col-12 col-lg-12">
                                         {this.state.type==="signup"? (
-                                                <div>
+                                                <div className="row">
                                                     <a href="">Forgot your password?</a>
-                                                    <button onClick={this.log}> Log In</button>
+                                                    <button className="col-12" onClick={this.log}> Log In</button>
                                                 </div>
                                             ):
-                                            ( <button onClick={this.signup}>
+                                            (
+                                                <div className="row">
+                                                <button className="col-12" onClick={this.signup}>
                                                 Sign Up
-                                            </button>)}
+                                                  </button>
+                                                </div>)}
                                         </div>
                                     </nav>
                                     </div>
