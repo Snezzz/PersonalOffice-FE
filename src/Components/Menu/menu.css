@@ -1,6 +1,5 @@
 .menu{
     position: relative;
-    width: 350px;
     left: 2px;
     background: rgba(79, 79, 79, 0.12);
     text-align: center;
@@ -8,7 +7,6 @@
 .menu img{
     position: relative;
     width: 50%;
-   /* left: 48px; */
     margin-top: 20px;
 }
 .btn-outline-warning {

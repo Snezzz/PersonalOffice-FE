@@ -89,3 +89,7 @@ nav .str{
 .str{
     justify-content: center;
 }
+.str input{
+    margin: 6px;
+    height: max-content;
+}

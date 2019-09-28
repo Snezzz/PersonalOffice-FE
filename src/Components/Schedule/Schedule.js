@@ -21,7 +21,6 @@ class Schedule extends Component {
                 {this.props.Data.length > 0 ? (
                     <div className="col-sm-12">
                         <Table Data={this.props.Data}/>
-                        <Export/>
                     </div>) : (<p>Нет данных</p>)
                 }
             </div>

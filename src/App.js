@@ -7,7 +7,7 @@ import Main from "./Components/Main";
 import UserContainer from "./Containers/UserContainer";
 import LogInContainer from "./Containers/LogInContainer"
 import SignUpContainer from "./Containers/SignUpContainer"
-import HelpContainer from "./Containers"
+import HelpContainer from "./Containers/HelpContainer/index"
 import Tasks from "./Components/Tasks";
 import TasksContainer from "./Containers/TasksContainer/TasksContainer";
 import Registration from "./Components/Registration/registration";

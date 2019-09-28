@@ -1,7 +1,7 @@
 import React, { Component }  from 'react';
 import { Link } from 'react-router-dom'
-import UserContainer from "./UserContainer/UserContainer";
-import SignUpContainer from "./SignUpContainer/SignUpContainer";
+import UserContainer from "../UserContainer/UserContainer";
+import SignUpContainer from "../SignUpContainer/SignUpContainer";
 
 
 let go = false;

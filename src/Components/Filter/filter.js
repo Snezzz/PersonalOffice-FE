@@ -46,9 +46,8 @@ class Filter extends Component{
     render(){
         return(
             <div className="filter col-sm-12">
-                <div className="col-12 col-md-12 col-sm-12 col-lg-8 col-xl-8 selection">
-                    <div className="row">
-                    <div className="col-12 col-md-4 col-sm-12 col-lg-4 col-xl-4 ">
+                <div className="col-12 col-md-6 col-sm-8 col-lg-8 col-xl-10 selection">
+                    <div className="col-12 col-md-12 col-sm-12 col-lg-4 col-xl-3 ">
                     <p>Курс:</p>
                     <select id="course">
                         <option value="all">все курсы</option>
@@ -60,7 +59,7 @@ class Filter extends Component{
                         <option value='6'>6</option>
                     </select>
                     </div>
-                    <div  className="col-12 col-md-4 col-sm-12 col-lg-4 col-xl-4 ">
+                    <div  className="col-12 col-md-12 col-sm-12 col-lg-4 col-xl-4 ">
                     <p>Семестр:</p>
                     <select id="semester">
                         <option value='all'>оба семестра</option>
@@ -68,7 +67,7 @@ class Filter extends Component{
                         <option value='2'>2</option>
                     </select>
                     </div>
-                    <div  className="col-12 col-md-4 col-sm-12 col-lg-4 col-xl-4 ">
+                    <div  className="col-12 col-md-12 col-sm-12 col-lg-4 col-xl-4 ">
                     <p>Режим:</p>
                     <select id="type">
                         <option value='all'>все</option>
@@ -77,8 +76,7 @@ class Filter extends Component{
                     </select>
                     </div>
                 </div>
-                </div>
-                <div className="col-3 col-md-3 col-sm-4 col-lg-3 col-xl-3 action">
+                <div className="col-12 col-md-3 col-sm-3 col-lg-3 col-xl-1 action">
                     <button className="cancel" onClick={this.filter}/>
                     <button className="get" onClick={this.filter}/>
                 </div>

@@ -27,9 +27,11 @@ class Body extends Component {
     render() {
 
             return (
-                <div className="col-12 col-md-9 col-sm-9 col-lg-9 col-xl-9 body">
+                <div className="col-12 col-md-9 col-sm-9 col-lg-9 col-xl-9">
+                    <div className="body">
                     {this.props.component(this.state.Data)}
                     </div>
+                </div>
             )
 
     }

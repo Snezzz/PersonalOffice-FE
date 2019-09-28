@@ -20,8 +20,8 @@ class Form extends Component {
         this.send = this.send.bind(this);
     }
     log(e){
-        let logIn = e.target.parentNode.parentElement.childNodes[2].value;
-        let password = e.target.parentNode.parentElement.childNodes[4].value;
+        let logIn = $("#login").val();
+        let password = $("#password").val();
         if((logIn)&&(password))
             this.props.log(logIn, password);
         else
@@ -74,18 +74,20 @@ class Form extends Component {
                                 <div>
                             <div className="header">
                                 <div className="login_page">
-                                    <div className="page_title row">
-                                        <div className="col-4 col-sm-8">
-                                            <Link to={{pathname: '/start'}}
+                                    <div className="page_title">
+                                        <div className="row">
+                                            <div className="col-4 col-sm-8">
+                                                <Link to={{pathname: '/start'}}
                                                   style={{ textDecoration: 'none', color:"red"}}>
-                                                <b>PA</b>
-                                                <img src={key} alt="here" />
-                                            </Link>
+                                                    <b>PA</b>
+                                                    <img src={key} alt="here" />
+                                                </Link>
+                                            </div>
+                                            <div className="col-8 col-sm-4">
+                                                <b><Link to={type} >Wanted to {this.state.type}?</Link></b>
+                                            </div>
                                         </div>
-                                        <div className="col-8 col-sm-4">
-                                        <b><Link to={type} >Wanted to {this.state.type}?</Link></b>
-                                        </div>
-                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div className="form col-12 col-sm-12 col-md-9 col-lg-7 col-xl-6 row">

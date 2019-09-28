@@ -54,7 +54,9 @@ class Menu extends Component {
     }
 
     render(){
-       let User = JSON.parse($.cookie("User"));
+        let inf = $.cookie("User");
+       console.log(inf)
+        let User = JSON.parse($.cookie("User"));
         return(
             <div className="col-12 col-md-3 col-sm-3 col-lg-3 col-xl-3 menu" >
                 <img alt="" src={avatar}/>

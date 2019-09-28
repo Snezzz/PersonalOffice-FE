@@ -29,7 +29,7 @@ get(){
                 {
                     if (password === responseJson.password) {
                         let date = new Date();
-                        let minutes = 30; // 30 minutes
+                        let minutes = 1; // 900 minutes
                         date.setTime(date.getTime() + (minutes * 60 * 1000));
                         $.cookie("User", JSON.stringify(responseJson), {expires: date});
                         localStorage.setItem("User", responseJson.id)

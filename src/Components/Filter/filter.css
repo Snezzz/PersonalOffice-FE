@@ -22,7 +22,9 @@
 }
 .selection select{
     margin: 12px 12px 12px 12px;
+    height: 25px;
 }
+
 .action button:first-child{
     background: url("../../Icons/050218D.png");
     width: 54px;

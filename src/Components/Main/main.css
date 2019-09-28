@@ -5,18 +5,24 @@
     background-color: #61dafb;
 
 }
-.header{
-    height: 200px;
+.logotype {
+    max-height: 268px;
+    max-width: 137px;
 }
-/*
-.mainPart{
-    display: flex;
-    flex-direction: row;
-}
-/*.container{
-    display: contents;
-}
-*/
 body{
     background: rgba(255, 247, 227, 0.67);
+}
+.question {
+    max-height: 100px;
+    max-width: 69px;
+}
+.header{
+    text-align: center;
+    border-bottom: 2px solid #FDC00F;
+}
+.header img:first-child{
+    text-align: right;
+}
+.header nav:nth-child(2){
+    margin-top: 35px;
 }
