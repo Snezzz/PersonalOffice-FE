@@ -61,7 +61,8 @@ class Statements extends Component {
     render(){
         return(
             <div>
-                {this.state.status  ?(<Form type="statement" send={this.send} data={this.state.Data}/>):
+                {this.state.status  ?(
+                    <Form type="statement" send={this.send} data={this.state.Data}/>):
                     (
                     <div className="table-responsive-sm">
                         {this.props.Data.length>0?(
@@ -92,7 +93,7 @@ class Statements extends Component {
                         </tbody>
                     </table>
                             ):(null)}
-                        <button className="add " onClick={this.add}/>
+                        <button className="add" onClick={this.add}/>
                     </div>
                         )
 

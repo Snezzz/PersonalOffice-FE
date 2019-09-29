@@ -24,24 +24,37 @@
     margin: 12px 12px 12px 12px;
     height: 25px;
 }
-
-.action button:first-child{
-    background: url("../../Icons/050218D.png");
-    width: 54px;
-    height: 48px;
+.selectName{
+    margin: 5px;
 }
+
+
+.cancelFilter{
+    background: url("../../Icons/050218D.png");
+    min-width: 54px;
+    min-height: 49px;
+}
+.getFilter{
+    background: url("../../Icons/ClearIcon.png");
+    min-width: 54px;
+    min-height: 49px;
+}
+
 .action button{
     border: none;
     background-size: 100% 100% !important;
+}
+.action{
+    width:113px;
+    margin: 0 auto;
+}
+.cancelFilter, .getFilter{
+    background-clip: content-box;
+    background-origin: content-box;
+}
 
-}
-.action button:last-child{
-    position: relative;
-    top: 3px;
-    background: url("../../Icons/ClearIcon.png");
-    width: 44px;
-    height: 40px;
-}
+
+
 .filter{
     display: flex;
     flex-wrap: wrap;

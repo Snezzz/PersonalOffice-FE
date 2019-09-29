@@ -31,7 +31,8 @@ get(){
                         let date = new Date();
                         let minutes = 1; // 900 minutes
                         date.setTime(date.getTime() + (minutes * 60 * 1000));
-                        $.cookie("User", JSON.stringify(responseJson), {expires: date});
+                        //$.cookie("User", JSON.stringify(responseJson), {expires: date});
+                        $.cookie("User", JSON.stringify(responseJson));
                         localStorage.setItem("User", responseJson.id)
                         localStorage.setItem("type", "fees");
                         User = responseJson;

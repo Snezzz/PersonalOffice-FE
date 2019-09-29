@@ -46,39 +46,45 @@ class Filter extends Component{
     render(){
         return(
             <div className="filter col-sm-12">
-                <div className="col-12 col-md-6 col-sm-8 col-lg-8 col-xl-10 selection">
-                    <div className="col-12 col-md-12 col-sm-12 col-lg-4 col-xl-3 ">
-                    <p>Курс:</p>
-                    <select id="course">
-                        <option value="all">все курсы</option>
-                        <option value='1'>1</option>
-                        <option value='2'>2</option>
-                        <option value='3'>3</option>
-                        <option value='4'>4</option>
-                        <option value='5'>5</option>
-                        <option value='6'>6</option>
-                    </select>
-                    </div>
-                    <div  className="col-12 col-md-12 col-sm-12 col-lg-4 col-xl-4 ">
-                    <p>Семестр:</p>
-                    <select id="semester">
-                        <option value='all'>оба семестра</option>
-                        <option value='1'>1</option>
-                        <option value='2'>2</option>
-                    </select>
-                    </div>
-                    <div  className="col-12 col-md-12 col-sm-12 col-lg-4 col-xl-4 ">
-                    <p>Режим:</p>
-                    <select id="type">
-                        <option value='all'>все</option>
-                        <option value='tests'>зачеты</option>
-                        <option value='exams'>экзамены</option>
-                    </select>
+                <div className="col-12 col-md-8 col-sm-9 col-lg-8 col-xl-12">
+                    <div className="selection">
+
+                            <div className="col-12 col-md-12 col-sm-12 col-lg-4 col-xl-4 justify-content-center">
+                                <label className="selectName">Курс:</label>
+                                <select id="course">
+                                    <option value="all">все курсы</option>
+                                    <option value='1'>1</option>
+                                    <option value='2'>2</option>
+                                    <option value='3'>3</option>
+                                    <option value='4'>4</option>
+                                    <option value='5'>5</option>
+                                    <option value='6'>6</option>
+                                </select>
+                            </div>
+                            <div  className="col-12 col-md-12 col-sm-12 col-lg-4 col-xl-4 justify-content-center">
+                                <label className="selectName">Семестр:</label>
+                                <select id="semester">
+                                    <option value='all'>оба семестра</option>
+                                    <option value='1'>1</option>
+                                    <option value='2'>2</option>
+                                </select>
+                                </div>
+                            <div  className="col-12 col-md-12 col-sm-12 col-lg-4 col-xl-4 justify-content-center">
+                                <label className="selectName">Режим:</label>
+                                <select id="type">
+                                    <option value='all'>все</option>
+                                    <option value='tests'>зачеты</option>
+                                    <option value='exams'>экзамены</option>
+                                </select>
+
+                        </div>
                     </div>
                 </div>
-                <div className="col-12 col-md-3 col-sm-3 col-lg-3 col-xl-1 action">
-                    <button className="cancel" onClick={this.filter}/>
-                    <button className="get" onClick={this.filter}/>
+                <div className="col-12 col-md-3 col-sm-3 col-lg-2 col-xl-12">
+                    <div className="action">
+                        <button className="cancelFilter" onClick={this.filter}/>
+                        <button className="getFilter" onClick={this.filter}/>
+                    </div>
                 </div>
             </div>
         )

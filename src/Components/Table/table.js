@@ -14,35 +14,38 @@ class Table extends Component{
     }
     render(){
         return(
-        <div className="markTable table-responsive-sm">
-            {(this.props.Data.length > 0) ? (<table className="table table-bordered">
-                    <thead className="table-dark">
-                    <tr>
-                        <td>Дисциплина</td>
-                        <td>Преподаватель</td>
-                        <td>Курс</td>
-                        <td>Семестр</td>
-                        <td>Тип</td>
-                        <td>Оценка</td>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {this.props.Data.map((data) =>
-                        <tr key={data.id}>
-                            <td>{data.subject}</td>
-                            <td>{data.lecturer}</td>
-                            <td>{data.course}</td>
-                            <td>{data.semester}</td>
-                            <td>{data.type}</td>
-                            <td>{data.fee}</td>
-                        </tr>
+            <div className="markTable">
+                <div className="table-responsive-sm">
+                    {(this.props.Data.length > 0) ?
+                        (<table className="table table-bordered">
+                            <thead className="table-dark">
+                                <tr>
+                                    <td>Дисциплина</td>
+                                    <td>Преподаватель</td>
+                                    <td>Курс</td>
+                                    <td>Семестр</td>
+                                    <td>Тип</td>
+                                    <td>Оценка</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {this.props.Data.map((data) =>
+                                <tr key={data.id}>
+                                    <td>{data.subject}</td>
+                                    <td>{data.lecturer}</td>
+                                    <td>{data.course}</td>
+                                    <td>{data.semester}</td>
+                                    <td>{data.type}</td>
+                                    <td>{data.fee}</td>
+                                </tr>
                     )
                     }
-                    </tbody>
-                </table>) :
+                            </tbody>
+                    </table>) :
                 (<p>Данных не существует</p>)
             }
-        </div>
+            </div>
+            </div>
         )
     }
 }

@@ -1,21 +1,24 @@
 .big_icon {
     position: relative;
+    max-width: 204px;
+    max-height: 247px;
 }
-.header{
-    height: 100% !important;
+.big_icon:first-child{
+    float: right;
+    margin: 0 0 0 auto;
 }
-@media (min-width: 768px){
-    .statement {
-        text-align: right !important;
-    }
+.big_icon:nth-child(2){
+    float: left;
+    margin: 0 auto 0 0;
 }
+
 
 .title {
     margin-top: 20px;
     font-family: Josefin Sans;
     font-style: normal;
     font-weight: normal;
-    font-size: 5em;
+    font-size: 4em;
     color: #FDC00F;
     text-align: center;
 }
@@ -50,15 +53,40 @@
 }
 .question, .logotype {
     background-size: cover;
-    margin: 12px 12px 12px 12px;
+    margin: 12px 0 12px 0;
     border: none;
     cursor: pointer;
 }
 .question{
     max-height: 100px;
-    max-width: 100px;
+    max-width: 45px;
 }
 .logotype{
     max-height: 315px;
-    max-width: 217px;
+    max-width: 93px;
+}
+
+@media screen and (min-width: 1200px ){
+ .sign_up, .log_in{
+     font-size: 20px;
+ }
+    .big_icon{
+        max-width: 204px;
+        max-height: 247px;
+    }
+    .statement{
+        font-size: 36px;
+    }
+}
+
+@media (min-width: 768px){
+    .statement {
+        text-align: center;
+    }
+}
+@media (max-width: 430px) {
+    .big_icon:first-child, .big_icon:nth-child(2) {
+        margin: 0 auto;
+    }
+
 }

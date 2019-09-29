@@ -71,57 +71,66 @@ class Form extends Component {
                                     <button className="btn btn-outline-primary" onClick={this.send}>Добавить</button>
                                 </form>
                             </div>):(
-                                <div>
+                                <div className="row">
+                                    <div className="col-12">
                             <div className="header">
                                 <div className="login_page">
                                     <div className="page_title">
                                         <div className="row">
-                                            <div className="col-4 col-sm-8">
+                                            <div className="col-4 col-sm-2 col-xl-2">
                                                 <Link to={{pathname: '/start'}}
                                                   style={{ textDecoration: 'none', color:"red"}}>
                                                     <b>PA</b>
                                                     <img src={key} alt="here" />
                                                 </Link>
                                             </div>
-                                            <div className="col-8 col-sm-4">
+                                            <div className="col-8 col-sm-10 col-xl-10">
                                                 <b><Link to={type} >Wanted to {this.state.type}?</Link></b>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div className="form col-12 col-sm-12 col-md-9 col-lg-7 col-xl-6 row">
-                                    <nav className="col-sm-12 justify-content-center">
-                                        <img alt="" src={avatar} />
-                                    </nav>
-                                    <nav className="col-sm-12 ">
-                                        <div className="row str">
-                                            <b className="col-12 col-lg-3 col-md-3 col-sm-3 col-xl-3">Login:</b>
-                                            <input className="col-8 col-lg-5 col-md-5 col-sm-5 col-xl-5" id="login" type="text" placeholder="st010203"/>
-                                        </div>
-                                        {this.state.type!=="login"?(
-                                            <div className="row str">
-                                            <b className="col-12 col-lg-3 col-md-3 col-sm-3 col-xl-3">Password:</b>
-                                            <input className="col-8 col-lg-5 col-md-5 col-sm-5 col-xl-5" id="password" type="password" placeholder="****"/>
-                                        </div>):(undefined)
-                                        }
-
-                                        <div className="col-12 col-lg-12">
-                                        {this.state.type==="signup"? (
-                                                <div className="row">
-                                                    <a href="">Forgot your password?</a>
-                                                    <button className="col-12" onClick={this.log}> Log In</button>
-                                                </div>
-                                            ):
-                                            (
-                                                <div className="row">
-                                                <button className="col-12" onClick={this.signup}>
-                                                Sign Up
-                                                  </button>
-                                                </div>)}
-                                        </div>
-                                    </nav>
                                     </div>
+                                    <div className="form col-10 col-sm-7 col-md-7 col-lg-7 col-xl-6">
+                                    <div className="row">
+                                        <nav className="col-sm-12 justify-content-center">
+                                            <img alt="" src={avatar} />
+                                        </nav>
+                                        <nav className="col-sm-12">
+                                            <div className="str">
+                                                <div className="row justify-content-center">
+                                                    <b className="col-12 col-lg-3 col-md-3 col-sm-6 col-xl-3">Login:</b>
+                                                    <input className="col-8 col-lg-5 col-md-5 col-sm-6 col-xl-5" id="login" type="text" placeholder="st010203"/>
+                                                </div>
+                                            </div>
+                                            {this.state.type!=="login"?
+                                                (
+                                                    <div className="str">
+                                                         <div className="row justify-content-center">
+                                                            <b className="col-12 col-lg-3 col-md-3 col-sm-6 col-xl-3">Password:</b>
+                                                            <input className="col-8 col-lg-5 col-md-5 col-sm-6 col-xl-5" id="password" type="password" placeholder="****"/>
+                                                         </div>
+                                                    </div>):(null)
+                                            }
+
+                                            <div className="col-12 col-lg-12">
+                                            {this.state.type==="signup"? (
+                                                    <div className="row">
+                                                        <a href="" id="restore">Forgot your password?</a>
+                                                        <button className="col-12" onClick={this.log}> Log In</button>
+                                                    </div>
+                                                ):
+                                                (
+                                                    <div className="row">
+                                                    <button className="col-12" onClick={this.signup}>
+                                                    Sign Up
+                                                      </button>
+                                                    </div>)}
+                                            </div>
+                                        </nav>
+                                    </div>
+                            </div>
                             </div>
                         )}
 

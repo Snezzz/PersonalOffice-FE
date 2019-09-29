@@ -35,16 +35,27 @@ class Menu extends Component {
     }
     componentDidMount(){
         $(".submenu").hide();
-     //   $(".fees").css("backgroundColor","rgba(253,192,15,0.93)");
-        $(".fees").addClass("active")
+        if(!$.cookie("activeButton")){
+            $(".fees").addClass("active")
+        }
+        else {
+            let active = $.cookie("activeButton");
+           $(".mainMenu button[type="+active+"]").addClass("active");
+           if(active==="fees"){
+               $(".submenu").show();
+           }
+        }
+
     }
     getBody(e){
-
-        if(prev){
-            $(prev).removeClass("active");
+        $.cookie("activeButton",$(e.target).attr("type"));
+        let buttons = $(".mainMenu button");
+        for (let i of buttons){
+            $(i).removeClass("active");
         }
         $(".submenu").fadeOut(100);
         let attr  = $(e.target).attr("type");
+
         $(e.target).addClass("active");
         if(attr==="fees"){
             $(".submenu").fadeIn(100);
@@ -55,26 +66,26 @@ class Menu extends Component {
 
     render(){
         let inf = $.cookie("User");
-       console.log(inf)
         let User = JSON.parse($.cookie("User"));
         return(
-            <div className="col-12 col-md-3 col-sm-3 col-lg-3 col-xl-3 menu" >
-                <img alt="" src={avatar}/>
-                <p className="user">{User.sirName} {User.firstName} {User.partonymic}</p>
-
-                <p>{User.type} {User.course} курс</p>
-                <p>{User.direction}</p>
-                <div className="mainMenu">
-                <button className="btn btn-outline-warning" type="user" onClick={this.getBody}>Персональные данные</button>
-                <button className="btn btn-outline-warning fees" type="fees" onClick={this.getBody}>Электронный дневник</button>
-                    <ul className="submenu">
-                        <li><button className="btn btn-outline-warning" data-info="exams" onClick={this.filter}>Экзамены</button></li>
-                        <li><button className="btn btn-outline-warning" data-info="tests" onClick={this.filter}>Зачеты</button></li>
-                    </ul>
-                <button className="btn btn-outline-warning" type="statements" onClick={this.getBody}>Заявления</button>
-                    <button className="btn btn-outline-warning"  type="tasks" onClick={this.getBody}>Задания</button>
+            <div className="col-12 col-md-3 col-sm-3 col-lg-3 col-xl-3">
+                <div className="menu">
+                    <img alt="" src={avatar}/>
+                    <p className="user">{User.sirName} {User.firstName} {User.partonymic}</p>
+                    <p>{User.type} {User.course} курс</p>
+                    <p>{User.direction}</p>
+                    <div className="mainMenu">
+                        <button className="btn btn-outline-warning" type="user" onClick={this.getBody}>Персональные данные</button>
+                        <button className="btn btn-outline-warning fees" type="fees" onClick={this.getBody}>Электронный дневник</button>
+                        <ul className="submenu">
+                            <li><button className="btn btn-outline-warning" data-info="exams" onClick={this.filter}>Экзамены</button></li>
+                            <li><button className="btn btn-outline-warning" data-info="tests" onClick={this.filter}>Зачеты</button></li>
+                        </ul>
+                        <button className="btn btn-outline-warning" type="statements" onClick={this.getBody}>Заявления</button>
+                        <button className="btn btn-outline-warning"  type="tasks" onClick={this.getBody}>Задания</button>
+                    </div>
+                    <button className="btn btn-outline-info button" onClick={this.logOut}>Log out</button>
                 </div>
-                <button className="logout btn btn-outline-info" onClick={this.logOut}>Log out</button>
             </div>
         );
 

@@ -16,13 +16,15 @@ class Schedule extends Component {
     }
     render(){
         return(
-            <div className="data row">
-                <Filter filter={this.props.filter}/>
-                {this.props.Data.length > 0 ? (
-                    <div className="col-sm-12">
-                        <Table Data={this.props.Data}/>
-                    </div>) : (<p>Нет данных</p>)
-                }
+            <div className="row">
+                <div className="data">
+                    <Filter filter={this.props.filter}/>
+                    {this.props.Data.length > 0 ?
+                        (<div className="col-sm-12">
+                            <Table Data={this.props.Data}/>
+                        </div>) : (<p>Нет данных</p>)
+                     }
+                </div>
             </div>
                     )
 
